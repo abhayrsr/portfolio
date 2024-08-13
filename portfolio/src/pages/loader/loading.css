@@ -1,0 +1,51 @@
+* {
+  background-color: #2d0220;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.name {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10vh;
+  color: white;
+  letter-spacing: -0.2vw;
+  text-shadow: white 0 0 5px;
+  margin-bottom: 2vh; /* Add some space below the name */
+}
+
+@keyframes loader{
+    from {background-color: white;}
+    to {background-color: #ce2e09;
+        text-shadow: #ce2e09 0 0 10px;}
+}
+
+.loader {
+  height: 1vh;
+  width: 1vh;
+  background-color: white;
+  border-radius: 50%;
+  animation-name: loader;
+  animation-duration: 1s;
+  margin: 0 0.5vh; /* Add some spacing between loaders */
+}
+
+.logo {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Align the children vertically */
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  gap: 2vh;
+  margin-top: 2vh; /* Add space between the name and loaders */
+}
+
