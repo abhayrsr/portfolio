@@ -18,18 +18,38 @@
 
 @keyframes loader{
     from {background-color: white;}
-    to {background-color: #ce2e09;
-        text-shadow: #ce2e09 0 0 10px;}
+    to {background-color: #ce2e09;}
 }
 
-.loader {
+.loader{
   height: 1vh;
   width: 1vh;
   background-color: white;
   border-radius: 50%;
   animation-name: loader;
-  animation-duration: 1s;
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
   margin: 0 0.5vh; /* Add some spacing between loaders */
+}
+
+#l1 {
+  animation-delay: 1s;
+}
+
+#l2 {
+  animation-delay: 2s;
+}
+
+#l3 {
+  animation-delay: 3s;
+}
+
+#l4 {
+  animation-delay: 4s;
+}
+
+#l5 {
+  animation-delay: 5s;
 }
 
 .logo {
