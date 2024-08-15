@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.cursor-hidden .typed-cursor{
+    opacity: 0;
+    animation: none;
+}
+
 
 /* * {
   margin: 0;
