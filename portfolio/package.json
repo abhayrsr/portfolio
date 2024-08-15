@@ -11,6 +11,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.26.0",
     "react-scripts": "5.0.1",
+    "react-typed": "^2.0.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
   }
 }

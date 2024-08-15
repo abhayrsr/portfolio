@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* .center{
+    border: 1px solid red;
+    width: 10vw;
+    max-width: 20vw;
+    margin: 0 auto;
+    background-color: rebeccapurple;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
