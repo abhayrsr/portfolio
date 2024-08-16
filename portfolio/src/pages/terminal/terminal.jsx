@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactTyped } from "react-typed";
 import "../terminal/terminal.css";
 
@@ -11,6 +12,18 @@ export default function Terminal() {
   const [showDoneSec, setShowDoneSec] = useState(false);
   const [showCommands, setShowCommands] = useState(false);
   const [showSecCmdLine, setShowSecCmdLine] = useState(false);
+  const [lsInput, setLsInput] = useState("");
+  const [lsInputToggle, setLsInputToggle] = useState(false);
+  const [lsPagesToggle, setlsPagesToggle] = useState(false);
+  const lsInputRef = useRef(null);
+
+  function handleKeyDown(e) {
+    if (lsInput === "ls") {
+      if (e.key === "Enter") {
+        setLsInputToggle(true);
+      }
+    }
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,7 +31,7 @@ export default function Terminal() {
     }, 5650);
 
     return () => clearTimeout(timer);
-  }, [showNextLine])
+  }, [showNextLine]);
 
   useEffect(() => {
     if (showNextLine) {
@@ -68,12 +81,31 @@ export default function Terminal() {
   }, [showNextLine]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSecCmdLine(true);
-    }, 10000);
+    if (showNextLine) {
+      const timer = setTimeout(() => {
+        setShowSecCmdLine(true);
+      }, 10000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, [showNextLine]);
+
+  useEffect(() => {
+    if (lsInput === "ls" && lsInputToggle) {
+      console.log(lsInput);
+      const timer = setTimeout(() => {
+        setlsPagesToggle(true);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [lsInput, lsInputToggle]);
+
+  useEffect(() => {
+    if (showSecCmdLine && lsInputRef.current) {
+      lsInputRef.current.focus();
+      lsInputRef.current.select();
+    }
+  }, [showSecCmdLine]);
 
   return (
     <div>
@@ -87,21 +119,21 @@ export default function Terminal() {
           <p className="absolute left 0">
             {" "}
             <span class="text-[#24F75A]">abhay@abhay-WebDev:</span> ~${" "}
-            <span
-              className={hideCursor ? "cursor-hidden" : ""}
-            >
-            <ReactTyped
-              strings={["sudo apt install portfolio"]}
-              typeSpeed={100}
-              cursorChar="_"
-              startDelay={2000}
-              onComplete={() => setShowNextLine(true)}
-            />
+            <span className={hideCursor ? "cursor-hidden" : ""}>
+              <ReactTyped
+                strings={["sudo apt install portfolio"]}
+                typeSpeed={100}
+                cursorChar="_"
+                startDelay={2000}
+                onComplete={() => setShowNextLine(true)}
+              />
             </span>
           </p>
           <br></br>
           {showNextLine && (
             <>
+              {/* start of first sudo commands */}
+
               <p className="absolute left 0">
                 Reading package lists... {showDone && <span>Done</span>}
               </p>
@@ -147,8 +179,37 @@ export default function Terminal() {
                   <span class="text-[#24F75A]">
                     abhay@abhay-WebDev:
                   </span> ~$ <span></span>
+                  <span className="">
+                    <input
+                      ref={lsInputRef}
+                      value={lsInput}
+                      onChange={(e) => setLsInput(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      className="blinking-cursor bg-transparent border-none focus:outline-none"
+                    />
+                  </span>
                 </p>
               )}
+              <br></br>
+              {lsPagesToggle && (
+                <>
+                  <p className="absolute left 0">
+                    <span className="mr-8">experience.txt </span>
+                    <span className="mr-8">skills.txt </span>
+                    <span className="mr-8"> projects.txt </span>
+                    <span className="mr-8">contact.txt </span>
+                  </p>{" "}
+                  <br></br>
+                  <p className="absolute left 0">
+                    {" "}
+                    <span class="text-[#24F75A]">
+                      abhay@abhay-WebDev:
+                    </span> ~$ <span></span>
+                  </p>
+                </>
+              )}
+
+              {/* end of sudo commands */}
             </>
           )}
         </div>

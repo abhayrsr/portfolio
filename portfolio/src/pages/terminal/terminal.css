@@ -8,6 +8,22 @@
 }
 
 
+
+.blinking-cursor::after {
+  content: "_" !important; /* Display an underscore */
+  height: 100%;
+  width: 1ch;
+  animation: blink 1s steps(1) infinite;
+  color: white; /* Adjust this to match your input text color */
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
 /* * {
   margin: 0;
   padding: 0;
