@@ -16,11 +16,26 @@ export default function Terminal() {
   const [lsInputToggle, setLsInputToggle] = useState(false);
   const [lsPagesToggle, setlsPagesToggle] = useState(false);
   const lsInputRef = useRef(null);
+  const [showThirdCmdLine, setShowThirdCmdLine] = useState(false);
+  const [cdInput, setCdInput] = useState("");
+  const [cdInputToggle, setCdInputToggle] = useState("")
+  const cdInputRef = useRef(null);
+  const pages = ["experience", "skills", "projects", "contact"];
 
   function handleKeyDown(e) {
     if (lsInput === "ls") {
       if (e.key === "Enter") {
         setLsInputToggle(true);
+      }
+    }
+  }
+
+  function handleKeyDownCd(e){
+    for(let p in pages){
+      if(cdInput === `cd ${pages[p].txt}`){
+        if(e.key === "Enter"){
+          setCdInputToggle(true)
+        }
       }
     }
   }
@@ -91,6 +106,16 @@ export default function Terminal() {
   }, [showNextLine]);
 
   useEffect(() => {
+    if (lsInputToggle) {
+      const timer = setTimeout(() => {
+        setShowThirdCmdLine(true);
+      }, 0);
+
+      return () => clearTimeout(timer);
+    }
+  }, [lsInputToggle]);
+
+  useEffect(() => {
     if (lsInput === "ls" && lsInputToggle) {
       console.log(lsInput);
       const timer = setTimeout(() => {
@@ -101,11 +126,28 @@ export default function Terminal() {
   }, [lsInput, lsInputToggle]);
 
   useEffect(() => {
+    if(cdInputToggle){
+      const timer = setTimeout(() => {
+        setCdInputToggle(true);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [cdInputToggle])
+
+  useEffect(() => {
     if (showSecCmdLine && lsInputRef.current) {
       lsInputRef.current.focus();
       lsInputRef.current.select();
     }
   }, [showSecCmdLine]);
+
+  useEffect(() => {
+    if(showSecCmdLine && cdInputRef.current){
+      cdInputRef.current.focus();
+      cdInputRef.current.select();
+    }
+  }, [showSecCmdLine])
+
 
   return (
     <div>
@@ -200,13 +242,30 @@ export default function Terminal() {
                     <span className="mr-8">contact.txt </span>
                   </p>{" "}
                   <br></br>
-                  <p className="absolute left 0">
-                    {" "}
-                    <span class="text-[#24F75A]">
-                      abhay@abhay-WebDev:
-                    </span> ~$ <span></span>
-                  </p>
                 </>
+              )}
+              {showThirdCmdLine && (
+                <p className="absolute left 0">
+                {" "}
+                <span class="text-[#24F75A]">
+                  abhay@abhay-WebDev:
+                </span> ~$ <span></span>
+                <span className="">
+                <input
+                  ref={cdInputRef}
+                  value={cdInput}
+                  onChange={(e) => setCdInput(e.target.value)}
+                  onKeyDown={handleKeyDownCd}
+                  className="blinking-cursor bg-transparent border-none focus:outline-none"
+                />
+              </span>
+              </p>
+              )}
+              <br></br>
+              {cdInputToggle && (
+                <p>
+
+                </p>
               )}
 
               {/* end of sudo commands */}
