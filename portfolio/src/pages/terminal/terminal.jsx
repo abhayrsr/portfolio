@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import { ReactTyped } from "react-typed";
+import Experience from "../experience/experience";
 import "../terminal/terminal.css";
 
 export default function Terminal() {
@@ -31,8 +31,9 @@ export default function Terminal() {
   }
 
   function handleKeyDownCd(e){
-    for(let p in pages){
-      if(cdInput === `cd ${pages[p].txt}`){
+    console.log(cdInput)
+    for(let p = 0; p < pages.length; p++){
+      if(cdInput === `cd ${pages[p]}.txt`){
         if(e.key === "Enter"){
           setCdInputToggle(true)
         }
@@ -151,8 +152,8 @@ export default function Terminal() {
 
   return (
     <div>
-      <div className="relative">
-        <div className="absolute left 0 font-ubuntu text-white text-2xl">
+      <div className="relative md:container md:mx-auto size-full">
+        <div className="absolute left 0 font-ubuntu text-white text-2xl size-full">
           <p>
             To run command as administrator (user: 'root'), use "sudo command".
             See man sudo root for detail.
@@ -262,10 +263,14 @@ export default function Terminal() {
               </p>
               )}
               <br></br>
+              <br></br>
               {cdInputToggle && (
-                <p>
-
-                </p>
+                <>
+                <p className="absolute left 0">
+                    <Experience />
+                  </p>{" "}
+                  <br></br>
+                </>
               )}
 
               {/* end of sudo commands */}
