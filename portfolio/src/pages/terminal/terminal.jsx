@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ReactTyped } from "react-typed";
 import Experience from "../experience/experience";
+import Skills from "../skills/skills";
+import Projects from "../projects/projects";
+import Contact from "../contact/contact";
 import "../terminal/terminal.css";
 
 export default function Terminal() {
@@ -18,8 +21,12 @@ export default function Terminal() {
   const lsInputRef = useRef(null);
   const [showThirdCmdLine, setShowThirdCmdLine] = useState(false);
   const [cdInput, setCdInput] = useState("");
-  const [cdInputToggle, setCdInputToggle] = useState("")
+  const [cdInputToggle, setCdInputToggle] = useState("");
   const cdInputRef = useRef(null);
+  const [showFourthCmdLine, setShowFourthCmdLine] = useState(false);
+  const [cdInput1, setCdInput1] = useState("");
+  const [cdInputToggle1, setCdInputToggle1] = useState("");
+  const cdInput1Ref = useRef(null);
   const pages = ["experience", "skills", "projects", "contact"];
 
   function handleKeyDown(e) {
@@ -30,16 +37,37 @@ export default function Terminal() {
     }
   }
 
-  function handleKeyDownCd(e){
-    console.log(cdInput)
-    for(let p = 0; p < pages.length; p++){
-      if(cdInput === `cd ${pages[p]}.txt`){
-        if(e.key === "Enter"){
-          setCdInputToggle(true)
+  function handleKeyDownCd(e) {
+    for (let p = 0; p < pages.length; p++) {
+      if (cdInput === `cd ${pages[p]}.txt`) {
+        if (e.key === "Enter") {
+          setCdInputToggle(true);
         }
       }
     }
   }
+
+   function handleKeyDownCd1(e){
+    for (let p = 0; p < pages.length; p++) {
+      if (cdInput1 === `cd ${pages[p]}.txt`) {
+        if (e.key === "Enter") {
+          setCdInputToggle1(true);
+        }
+      }
+    }
+  }
+
+  const component = () => {
+    if (cdInput === `cd experience.txt`) {
+      return <Experience />;
+    } else if (cdInput === `cd skills.txt`) {
+      return <Skills />;
+    } else if (cdInput === `cd projects.txt`) {
+      return <Projects />;
+    } else if (cdInput === `cd contact.txt`) {
+      return <Contact />;
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -117,6 +145,15 @@ export default function Terminal() {
   }, [lsInputToggle]);
 
   useEffect(() => {
+    if (cdInputToggle) {
+      const timer = setTimeout(() => {
+        setShowFourthCmdLine(true);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [cdInputToggle]);
+
+  useEffect(() => {
     if (lsInput === "ls" && lsInputToggle) {
       console.log(lsInput);
       const timer = setTimeout(() => {
@@ -127,13 +164,13 @@ export default function Terminal() {
   }, [lsInput, lsInputToggle]);
 
   useEffect(() => {
-    if(cdInputToggle){
+    if (cdInputToggle) {
       const timer = setTimeout(() => {
         setCdInputToggle(true);
       }, 0);
       return () => clearTimeout(timer);
     }
-  }, [cdInputToggle])
+  }, [cdInputToggle]);
 
   useEffect(() => {
     if (showSecCmdLine && lsInputRef.current) {
@@ -143,12 +180,18 @@ export default function Terminal() {
   }, [showSecCmdLine]);
 
   useEffect(() => {
-    if(showSecCmdLine && cdInputRef.current){
+    if (showThirdCmdLine && cdInputRef.current) {
       cdInputRef.current.focus();
       cdInputRef.current.select();
     }
-  }, [showSecCmdLine])
+  }, [showThirdCmdLine]);
 
+  useEffect(() => {
+    if (showFourthCmdLine && cdInput1Ref.current) {
+      cdInput1Ref.current.focus();
+      cdInput1Ref.current.select();
+    }
+  }, [showFourthCmdLine]);
 
   return (
     <div>
@@ -247,31 +290,52 @@ export default function Terminal() {
               )}
               {showThirdCmdLine && (
                 <p className="absolute left 0">
-                {" "}
-                <span class="text-[#24F75A]">
-                  abhay@abhay-WebDev:
-                </span> ~$ <span></span>
-                <span className="">
-                <input
-                  ref={cdInputRef}
-                  value={cdInput}
-                  onChange={(e) => setCdInput(e.target.value)}
-                  onKeyDown={handleKeyDownCd}
-                  className="blinking-cursor bg-transparent border-none focus:outline-none"
-                />
-              </span>
-              </p>
+                  {" "}
+                  <span class="text-[#24F75A]">
+                    abhay@abhay-WebDev:
+                  </span> ~$ <span></span>
+                  <span className="">
+                    <input
+                      ref={cdInputRef}
+                      value={cdInput}
+                      onChange={(e) => setCdInput(e.target.value)}
+                      onKeyDown={handleKeyDownCd}
+                      className="blinking-cursor bg-transparent border-none focus:outline-none"
+                    />
+                  </span>
+                </p>
               )}
               <br></br>
               <br></br>
               {cdInputToggle && (
                 <>
-                <p className="absolute left 0">
-                    <Experience />
+                  <p className="absolute left 0">
+                    <div>{component()}</div>
+                    {showFourthCmdLine && (
+                      <p className="absolute left 0">
+                        {" "}
+                        <span class="text-[#24F75A]">
+                          abhay@abhay-WebDev:
+                        </span>{" "}
+                        ~$ <span></span>
+                        <span className="">
+                          <input
+                            ref={cdInput1Ref}
+                            value={cdInput1}
+                            onChange={(e) => setCdInput1(e.target.value)}
+                            onKeyDown={handleKeyDownCd1}
+                            className="blinking-cursor bg-transparent border-none focus:outline-none"
+                          />
+                        </span>
+                      </p>
+                    )}
+                    {/* <Experience /> */}
                   </p>{" "}
                   <br></br>
+                  
                 </>
               )}
+             
 
               {/* end of sudo commands */}
             </>

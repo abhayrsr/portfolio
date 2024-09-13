@@ -42,7 +42,7 @@ export default function Experience() {
         </div>
         <br></br>
         <div class="grid grid-cols-4 gap-4 flex">
-          <p class="text-3xl">Copywriter & Personal Development <br></br> Freelancer</p>
+          <p class="text-3xl">Copywriter & Personal Development, <br></br> Freelancer</p>
           <ul class="list-inside list-none col-span-2">
             <li class="text-left">
               Successfully crafted high-conversion landing and product pages for
