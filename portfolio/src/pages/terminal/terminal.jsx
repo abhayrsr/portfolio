@@ -4,9 +4,10 @@ import Experience from "../experience/experience";
 import Skills from "../skills/skills";
 import Projects from "../projects/projects";
 import Contact from "../contact/contact";
+import Command from "../../component/command";
 import "../terminal/terminal.css";
 
-export default function Terminal() {
+export default function Terminal({toggle}) {
   const [showNextLine, setShowNextLine] = useState(false);
   const [hideCursor, setHideCursor] = useState(false);
   const [showDone, setShowDone] = useState(false);
@@ -29,29 +30,51 @@ export default function Terminal() {
   const cdInput1Ref = useRef(null);
   const pages = ["experience", "skills", "projects", "contact"];
 
+  function handleToggle(data){
+    setLsInputToggle(data)
+  }
+
+  function handleCommandComponent(){
+    // <Command sendToggle={handleToggle} />
+  }
+
   function handleKeyDown(e) {
     if (lsInput === "ls") {
       if (e.key === "Enter") {
         setLsInputToggle(true);
       }
-    }
-  }
-
-  function handleKeyDownCd(e) {
-    for (let p = 0; p < pages.length; p++) {
-      if (cdInput === `cd ${pages[p]}.txt`) {
-        if (e.key === "Enter") {
-          setCdInputToggle(true);
+    } else {
+      // setCdInputToggle(true);
+        for (let p = 0; p < pages.length; p++) {
+          if (cdInput === `cd ${pages[p]}.txt`) {
+            if (e.key === "Enter") {
+              showThirdCmdLine(true)
+            }
+          }
         }
       }
     }
-  }
+  
+    function handleInput(){
+      setLsInput(lsInput)
+    }
+
+  // function handleKeyDownCd(e) {
+  //   for (let p = 0; p < pages.length; p++) {
+  //     if (cdInput === `cd ${pages[p]}.txt`) {
+  //       if (e.key === "Enter") {
+  //         setCdInputToggle(true);
+  //       }
+  //     }
+  //   }
+  // }
 
    function handleKeyDownCd1(e){
     for (let p = 0; p < pages.length; p++) {
       if (cdInput1 === `cd ${pages[p]}.txt`) {
         if (e.key === "Enter") {
           setCdInputToggle1(true);
+
         }
       }
     }
@@ -260,24 +283,25 @@ export default function Terminal() {
               <br></br>
               <br></br>
               {showSecCmdLine && (
-                <p className="absolute left 0">
-                  {" "}
-                  <span class="text-[#24F75A]">
-                    abhay@abhay-WebDev:
-                  </span> ~$ <span></span>
-                  <span className="">
-                    <input
-                      ref={lsInputRef}
-                      value={lsInput}
-                      onChange={(e) => setLsInput(e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      className="blinking-cursor bg-transparent border-none focus:outline-none"
-                    />
-                  </span>
-                </p>
+                <Command sendToggle={handleToggle}/>
+                // <p className="absolute left 0">
+                //   {" "}
+                //   <span class="text-[#24F75A]">
+                //     abhay@abhay-WebDev:
+                //   </span> ~$ <span></span>
+                //   <span className="">
+                //     <input
+                //       ref={lsInputRef}
+                //       value={lsInput}
+                //       onChange={(e) => setLsInput(e.target.value)}
+                //       onKeyDown={handleKeyDown}
+                //       className="blinking-cursor bg-transparent border-none focus:outline-none"
+                //     />
+                //   </span>
+                // </p>
               )}
               <br></br>
-              {lsPagesToggle && (
+              {/* {lsInputToggle && (
                 <>
                   <p className="absolute left 0">
                     <span className="mr-8">experience.txt </span>
@@ -286,9 +310,11 @@ export default function Terminal() {
                     <span className="mr-8">contact.txt </span>
                   </p>{" "}
                   <br></br>
+                  <Command />
+                  {handleCommandComponent}
                 </>
-              )}
-              {showThirdCmdLine && (
+              )} */}
+              {/* {showThirdCmdLine && (
                 <p className="absolute left 0">
                   {" "}
                   <span class="text-[#24F75A]">
@@ -299,7 +325,7 @@ export default function Terminal() {
                       ref={cdInputRef}
                       value={cdInput}
                       onChange={(e) => setCdInput(e.target.value)}
-                      onKeyDown={handleKeyDownCd}
+                      // onKeyDown={handleKeyDownCd}
                       className="blinking-cursor bg-transparent border-none focus:outline-none"
                     />
                   </span>
@@ -329,13 +355,12 @@ export default function Terminal() {
                         </span>
                       </p>
                     )}
-                    {/* <Experience /> */}
                   </p>{" "}
                   <br></br>
                   
                 </>
               )}
-             
+              */}
 
               {/* end of sudo commands */}
             </>
