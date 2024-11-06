@@ -18,6 +18,8 @@ export default function Path() {
   const inputRef = useRef(null)
 
   function handleKeyDown(e) {
+    inputRef.current.focus();
+    
     if (inputCommand === "ls") {
       if (e.key === "Enter") {
         setToggleList(true);
@@ -51,9 +53,11 @@ export default function Path() {
 
   useEffect(() => {
     
-    inputRef.current.focus();
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
     
-  })
+  }, [])
 
    return ( 
    <div>
