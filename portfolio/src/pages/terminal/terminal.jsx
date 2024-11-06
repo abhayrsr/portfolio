@@ -228,7 +228,7 @@ export default function Terminal({toggle}) {
           <br />
           <p className="absolute left 0">
             {" "}
-            <span class="text-[#24F75A]">abhay@abhay-WebDev:</span> ~${" "}
+            <span class="text-[#24F75A]">abhay@abhay-theDev:</span> ~${" "}
             <span className={hideCursor ? "cursor-hidden" : ""}>
               <ReactTyped
                 strings={["sudo apt install portfolio"]}

@@ -4,6 +4,7 @@ import Path from "../../component/path";
 export default function Experience() {
   return (
     <div class="container size-full">
+      <br />
       <div class="grid grid-cols-4 gap-4 flex">
         <p class="text-3xl">
           System Engineer, <br></br>Infosys <br></br>{" "}
