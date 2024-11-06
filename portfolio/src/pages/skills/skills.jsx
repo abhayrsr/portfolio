@@ -11,7 +11,7 @@ export default function Skills() {
         <p class="absolute left 0"><span class="text-[#6891C4]">Databases:</span> MySQL, MongoDB, PostgreSQL</p><br />
         <p class="absolute left 0"><span class="text-[#6891C4]">Tools: </span>Git, PowerShell, Linux, Vim</p><br />
         <p class="absolute left 0"><span class="text-[#6891C4]">Cloud:</span> Azure</p><br />
-        <p class="absolute left 0"><span class="text-[#6891C4]">DSA:</span> 400+ sloved on LeetCode <a href="https://leetcode.com/u/Abhay_Raj/" class="text-[#2865AC] underline underline-offset-2"> Click here </a></p><br />
+        <p class="absolute left 0"><span class="text-[#6891C4]">DSA:</span> 400+ solved on LeetCode <a href="https://leetcode.com/u/Abhay_Raj/" class="text-[#2865AC] underline underline-offset-2"> Click here </a></p><br />
         <br/>
         <Path />
       </div>
