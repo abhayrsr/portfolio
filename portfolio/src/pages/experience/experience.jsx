@@ -1,4 +1,5 @@
 import React from "react";
+import Path from "../../component/path";
 
 export default function Experience() {
   return (
@@ -39,7 +40,7 @@ export default function Experience() {
           <br></br>
         </ul>
         <p class="text-3xl">Jan 2021 – May 2022</p>
-        </div>
+      </div>
         <br></br>
         <div class="grid grid-cols-4 gap-4 flex">
           <p class="text-3xl">Copywriter & Personal Development, <br></br> Freelancer</p>
@@ -54,6 +55,7 @@ export default function Experience() {
           </ul>
           <p class="text-3xl">Jun 2022 - present</p>
         </div>
+        <Path />
       </div>
   );
 }

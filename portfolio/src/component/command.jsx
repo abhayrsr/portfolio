@@ -1,27 +1,31 @@
-import React, {useState }from "react";
+import React from "react";
+import Path from "./path";
 
 export default function Command() {
-  const [inputCommand, setInputCommand] = useState("");
-  const [toggle, setToggle] = useState(false)
-//   const inputCommandRef = useRef(null);
-//   const pages = ["experience", "skills", "projects", "contact"];
+  // const [inputCommand, setInputCommand] = useState("");
+  // const [toggleLs, setToggleLs] = useState(false)
+  // const [toggleExp, setToggleExp] = useState(false);
 
-function handleKeyDown(e) {
-    if (inputCommand === "ls") {
-      if (e.key === "Enter") {
-        setToggle(true)
-      }
-    } else {
-        if(e.key === "Enter"){
-            setToggle(false)
-        }
-    }
-}
+  // // const inputCommandRef = useRef(null);
+  // // const pages = ["experience", "skills", "projects", "contact"];
+  // console.log(inputCommand)
+  // function handleKeyDown(e) {
+  //   if (inputCommand === "ls") {
+  //     if (e.key === "Enter") {
+  //       setToggleLs(true);
+  //     }
+  //   } else if (inputCommand === `cd experience.txt`) {
+  //       if(e.key === "Enter"){
+  //         console.log('x')
+  //         setToggleExp(true)
+  //       } 
+  //     }
+  // }
 
-  
+
   return (
     <div>
-      <p className="absolute left 0">
+      {/* <p className="absolute left 0">
         {" "}
         <span class="text-[#24F75A]">abhay@abhay-WebDev:</span> ~$ <span></span>
         <span className="">
@@ -32,14 +36,15 @@ function handleKeyDown(e) {
             className="blinking-cursor bg-transparent border-none focus:outline-none"
           />
         </span>
-      </p>
-      <br/>
-      {toggle && <p className="absolute left 0">
-        <span className="mr-8">experience.txt </span>
-        <span className="mr-8">skills.txt </span>
-        <span className="mr-8"> projects.txt </span>
-        <span className="mr-8">contact.txt </span>
-    </p>}
+      </p> */}
+      <Path />
+      <br />
+      {/* {toggleLs && <List />}
+      {toggleLs && <Path />}
+      <br />
+      {toggleExp && <Experience />}
+      {toggleExp && <Path />} */}
+      
     </div>
   );
 }

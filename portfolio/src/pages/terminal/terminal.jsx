@@ -6,6 +6,7 @@ import Projects from "../projects/projects";
 import Contact from "../contact/contact";
 import Command from "../../component/command";
 import "../terminal/terminal.css";
+import Path from "../../component/path";
 
 export default function Terminal({toggle}) {
   const [showNextLine, setShowNextLine] = useState(false);
@@ -220,11 +221,11 @@ export default function Terminal({toggle}) {
     <div>
       <div className="relative md:container md:mx-auto size-full">
         <div className="absolute left 0 font-ubuntu text-white text-2xl size-full">
-          <p>
+          <p className="absolute left 0">
             To run command as administrator (user: 'root'), use "sudo command".
             See man sudo root for detail.
           </p>
-
+          <br />
           <p className="absolute left 0">
             {" "}
             <span class="text-[#24F75A]">abhay@abhay-WebDev:</span> ~${" "}
@@ -259,31 +260,33 @@ export default function Terminal({toggle}) {
               <br></br>
 
               {showCommands && (
-                <>
+                <div>
                   <p className="absolute left 0">
-                    <>You might want to access the portfolio.</>
-                    <br></br>
-                    <>The following commands will help:</>
-                    <br></br>
-                    <>
-                      <span></span>'ls' : to list all pages
-                    </>
-                    <br></br>
-                    <>
-                      <span></span>'cd' : to access each page
-                    </>
-                    <br></br>
-                  </p>
-                  <br></br>
-                </>
+                    <div>You might want to access the portfolio.</div>
+  
+                    <div>The following commands will help:</div>
+                    
+                    <div>
+                      'ls' : to list all pages
+                    </div>
+                    
+                    <div>
+                      'cd' : to access each page
+                    </div>
+                  </p>  
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <div><Path /></div>
+                </div>
               )}
 
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              {showSecCmdLine && (
-                <Command sendToggle={handleToggle}/>
+              {/* {showSecCmdLine && <Path />} */}
+              
+              {/* {showSecCmdLine && (
+                <Path />
+                // <Path />
                 // <p className="absolute left 0">
                 //   {" "}
                 //   <span class="text-[#24F75A]">
@@ -300,7 +303,7 @@ export default function Terminal({toggle}) {
                 //   </span>
                 // </p>
               )}
-              <br></br>
+              <br></br> */}
               {/* {lsInputToggle && (
                 <>
                   <p className="absolute left 0">
