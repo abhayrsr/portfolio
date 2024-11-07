@@ -7,7 +7,7 @@ export default function Projects() {
       <br/>
       <div class="grid grid-cols-4 gap-4 flex">
         <p class="text-3xl">
-          Online Payment Service
+          Online Payment App
         </p>
         <ul class="list-inside list-none col-span-2">
           <li class="text-left">
