@@ -5,8 +5,8 @@ export default function Experience() {
   return (
     <div class="container size-full">
       <br />
-      <div class="grid grid-cols-4 gap-4 flex">
-        <p class="text-3xl">
+      <div class="grid mobile:grid-cols-1 gap-2  laptop:grid-cols-4 gap-4 flex">
+        <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">
           System Engineer, <br></br>Infosys <br></br>{" "}
         </p>
         <ul class="list-inside list-none col-span-2">
@@ -40,11 +40,11 @@ export default function Experience() {
           </li>
           <br></br>
         </ul>
-        <p class="text-3xl">Jan 2021 – May 2022</p>
+        <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">Jan 2021 – May 2022</p>
       </div>
         <br></br>
-        <div class="grid grid-cols-4 gap-4 flex">
-          <p class="text-3xl">Copywriter & Personal Development, <br></br> Freelancer</p>
+        <div class="grid mobile:grid-cols-1 gap-2  laptop:grid-cols-4 gap-4 flex">
+          <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">Copywriter & Personal Development,  <br></br> Freelancer</p>
           <ul class="list-inside list-none col-span-2">
             <li class="text-left">
               Successfully crafted high-conversion landing and product pages for
@@ -54,8 +54,9 @@ export default function Experience() {
               development BootCamp to refresh and enhance my coding skills.
             </li>
           </ul>
-          <p class="text-3xl">Jun 2022 - present</p>
+          <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">Jun 2022 - present</p>
         </div>
+        <br/>
         <Path />
       </div>
   );

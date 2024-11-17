@@ -220,12 +220,12 @@ export default function Terminal({toggle}) {
   return (
     <div>
       <div className="relative md:container md:mx-auto size-full">
-        <div className="absolute left 0 font-ubuntu text-white text-2xl size-full">
-          <p className="absolute left 0">
+        <div className="absolute left 0 font-ubuntu text-white mobile:text-sm tablets:text-xl laptop:text-2xl size-full">
+          {/* <p className="absolute left 0">
             To run command as administrator (user: 'root'), use "sudo command".
             See man sudo root for detail.
           </p>
-          <br />
+          <br /> */}
           <p className="absolute left 0">
             {" "}
             <span class="text-[#24F75A]">abhay@abhay-theDev:</span> ~${" "}

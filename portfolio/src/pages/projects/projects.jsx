@@ -5,8 +5,8 @@ export default function Projects() {
   return (
     <div class="container size-full">
       <br/>
-      <div class="grid grid-cols-4 gap-4 flex">
-        <p class="text-3xl">
+      <div class="grid mobile:grid-cols-1 gap-2  laptop:grid-cols-4 gap-4 flex">
+        <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">
           Online Payment App
         </p>
         <ul class="list-inside list-none col-span-2">
@@ -23,11 +23,11 @@ export default function Projects() {
           </li>
           <br></br>
         </ul>
-        <a class="text-3xl text-[#2865AC] underline underline-offset-2" href="https://github.com/abhayrsr/pagaar">Github</a>
+        <a class="mobile:text-xl tablet:text-2xl laptop:text-3xl text-[#2865AC] underline underline-offset-2" href="https://github.com/abhayrsr/pagaar">Github</a>
       </div>
         <br></br>
-        <div class="grid grid-cols-4 gap-4 flex">
-          <p class="text-3xl">Food App</p>
+        <div class="grid mobile:grid-cols-1 gap-2  laptop:grid-cols-4 gap-4 flex">
+          <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">Food Delivery App</p>
           <ul class="list-inside list-none col-span-2">
             <li class="text-left">
             Developed a feature-rich food delivery application akin to Zomato using React, JavaScript, and 
@@ -41,9 +41,10 @@ export default function Projects() {
             across various devices and screen sizes.
             </li>
           </ul>
-          <a class="text-3xl text-[#2865AC] underline underline-offset-2" href="https://github.com/abhayrsr/haste2taste">Github</a>
+          <a class="mobile:text-xl tablet:text-2xl laptop:text-3xl text-[#2865AC] underline underline-offset-2" href="https://github.com/abhayrsr/haste2taste">Github</a>
           <br />
         </div>
+        <br />
         <Path />
       </div>
   )
