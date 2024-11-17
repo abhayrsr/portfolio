@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.terminal{
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.terminal-content{
-  text-align:center
-}
-
 
 .cursor-hidden .typed-cursor{
     opacity: 0;
