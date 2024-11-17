@@ -262,17 +262,17 @@ export default function Terminal({toggle}) {
               {showCommands && (
                 <div>
                   <p className="absolute left 0">
-                    <>You might want to access the portfolio.</>
+                    <p>You might want to access the portfolio.</p>
   
-                    <>The following commands will help:</>
+                    <p>The following commands will help:</p>
                     
-                    <>
+                    <p>
                       'ls' : to list all pages
-                    </>
+                    </p>
                     
-                    <>
+                    <p>
                       'cd' : to access each page
-                    </>
+                    </p>
                   </p>  
                   <br />
                   <br />
