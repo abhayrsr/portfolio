@@ -219,8 +219,8 @@ export default function Terminal({toggle}) {
 
   return (
     <div>
-      <div className="relative sm:container sm:mx-auto size-full">
-        <div className="terminal absolute left 0 font-ubuntu text-white mobile:text-xs tablets:text-xl laptop:text-2xl size-full">
+      <div className="terminal relative sm:container sm:mx-auto size-full">
+        <div className="terminal-content absolute left 0 font-ubuntu text-white mobile:text-xs tablets:text-xl laptop:text-2xl size-full">
           {/* <p className="absolute left 0">
             To run command as administrator (user: 'root'), use "sudo command".
             See man sudo root for detail.
