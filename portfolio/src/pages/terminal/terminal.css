@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.root {
+  box-sizing: border-box;
+}
+
 .terminal{
   height: 100vh;
   width: 80%;
