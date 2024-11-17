@@ -14,7 +14,7 @@ export default function Skills() {
         <p class="absolute left 0"><span class="text-[#6891C4]">DSA</span> 400+ solved on LeetCode <a href="https://leetcode.com/u/Abhay_Raj/" class="text-[#2865AC] underline underline-offset-2"> Click here </a></p><br />
         <br/>
         <Path />
-        
+
       </div>
     </div>
   )
