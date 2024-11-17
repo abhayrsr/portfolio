@@ -6,7 +6,7 @@ export default function List(){
     return(
         <div class="absolute md:container md:mx-auto size-full">
          <p class="absolute left 0  laptop:grid-cols-4 gap-4 flex">
-          <span class="mr-8">experience.txt </span>
+          <span class="absolute left 0 mr-8">experience.txt </span>
           <span class="mr-8">skills.txt </span>
           <span class="mr-8">projects.txt </span>
           <span class="mr-8">contact.txt </span>
