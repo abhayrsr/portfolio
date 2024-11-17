@@ -9,7 +9,7 @@ export default function Experience() {
         <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">
           System Engineer, <br></br>Infosys <br></br>{" "}
         </p>
-        <ul class="list-inside list-none col-span-2">
+        <ul class="list-inside list-none col-span-2 mobile:text-center">
           <li class="text-left">
             Engineered and deployed a responsive support portal for Daimler’s
             team using React and Node.js, enhancing user experience and
@@ -45,7 +45,7 @@ export default function Experience() {
         <br></br>
         <div class="grid mobile:grid-cols-1 gap-2  laptop:grid-cols-4 gap-4 flex">
           <p class="mobile:text-xl tablet:text-2xl laptop:text-3xl">Copywriter & Personal Development,  <br></br> Freelancer</p>
-          <ul class="list-inside list-none col-span-2">
+          <ul class="list-inside list-none col-span-2 mobile:text-center">
             <li class="text-left">
               Successfully crafted high-conversion landing and product pages for
               clients, achieving over a 40% increase in user sign-ups and sales,
