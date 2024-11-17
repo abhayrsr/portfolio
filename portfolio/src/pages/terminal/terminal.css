@@ -4,6 +4,8 @@
 
 .terminal{
   overflow:hidden;
+  height: 100vh;
+  width: 100%;
 }
 .terminal-content {
   overflow: auto;
