@@ -5,7 +5,7 @@ export default function List(){
 
     return(
         <div class="absolute md:container md:mx-auto size-full">
-         <div class="absolute left 0 grid grid-cols-4 gap-4">
+         <div class="absolute left 0 mobile:grid grid-cols-2 gap-2 laptop:grid grid-cols-4 gap-4">
           <p class="mr-8">experience.txt </p>
           <p class="mr-8">skills.txt </p>
           <p class="mr-8">projects.txt </p>
