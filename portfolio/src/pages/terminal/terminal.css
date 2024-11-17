@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 .terminal{
-  height: 100vh;
-  width: 80%
+  overflow:hidden;
+  min-height: 100vh;
+  width: 100%
 }
 
 .cursor-hidden .typed-cursor{
