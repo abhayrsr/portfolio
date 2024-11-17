@@ -5,11 +5,11 @@
 .terminal{
   overflow:hidden;
   height: 100vh;
-  width: 100%;
+  width: 90%;
+  padding: 16px;
+  box-sizing: border-box;
 }
-.terminal-content {
-  overflow: auto;
-}
+
 
 .cursor-hidden .typed-cursor{
     opacity: 0;
