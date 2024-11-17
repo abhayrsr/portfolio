@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .terminal{
-  height: 50vh;
+  height: 100vh;
   width: 50%
 }
 
