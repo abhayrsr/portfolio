@@ -226,10 +226,10 @@ export default function Terminal({toggle}) {
             See man sudo root for detail.
           </p>
           <br /> */}
-          <p className="absolute left 0 mobile:break-words">
+          <p className="absolute left 0 ">
             {" "}
             <span class="text-[#24F75A]">abhay@abhay-theDev:</span> ~${" "}
-            <span className={hideCursor ? "cursor-hidden" : ""}>
+            <span className={hideCursor ? "cursor-hidden" : "mobile:break-words"}>
               <ReactTyped
                 strings={["sudo apt install portfolio"]}
                 typeSpeed={100}
