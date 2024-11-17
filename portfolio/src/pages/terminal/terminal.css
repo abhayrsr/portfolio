@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.terminal{
+  height: 100vh;
+  width: 100%
+}
+
 .cursor-hidden .typed-cursor{
     opacity: 0;
     animation: none;
