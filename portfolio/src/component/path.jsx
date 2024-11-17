@@ -63,7 +63,7 @@ export default function Path() {
    <div>
       <p className="absolute left 0">
         {" "}
-        <span class="text-[#24F75A]">abhay@abhay-theDev:</span> ~$ <span></span>
+        <span className="text-[#24F75A]">abhay@abhay-theDev:</span> ~$ <span></span>
         <span className="">
           <input
             ref={inputRef}
