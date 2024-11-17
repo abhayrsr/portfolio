@@ -4,8 +4,9 @@
 
 .terminal{
   overflow:hidden;
-  min-height: 50vh;
-  width: 100%
+}
+.terminal-content {
+  overflow: auto;
 }
 
 .cursor-hidden .typed-cursor{
