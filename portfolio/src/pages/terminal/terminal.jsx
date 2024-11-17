@@ -219,7 +219,7 @@ export default function Terminal({toggle}) {
 
   return (
     <div>
-      <div className="absolute md:container md:mx-auto size-full">
+      <div className="absolute overflow-hidden md:container md:mx-auto size-full">
         <div className="absolute left 0 font-ubuntu text-white mobile:text-xs tablets:text-xl laptop:text-2xl size-full">
           {/* <p className="absolute left 0">
             To run command as administrator (user: 'root'), use "sudo command".
