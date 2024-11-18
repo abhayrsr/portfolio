@@ -47,7 +47,7 @@ export default function Terminal({toggle}) {
     } else {
       // setCdInputToggle(true);
         for (let p = 0; p < pages.length; p++) {
-          if (cdInput === `cat ${pages[p]}.txt`) {
+          if (cdInput === `cd ${pages[p]}.txt`) {
             if (e.key === "Enter") {
               showThirdCmdLine(true)
             }
@@ -72,7 +72,7 @@ export default function Terminal({toggle}) {
 
    function handleKeyDownCd1(e){
     for (let p = 0; p < pages.length; p++) {
-      if (cdInput1 === `cat ${pages[p]}.txt`) {
+      if (cdInput1 === `cd ${pages[p]}.txt`) {
         if (e.key === "Enter") {
           setCdInputToggle1(true);
 
@@ -82,13 +82,13 @@ export default function Terminal({toggle}) {
   }
 
   const component = () => {
-    if (cdInput === `cat experience.txt`) {
+    if (cdInput === `cd experience.txt`) {
       return <Experience />;
-    } else if (cdInput === `cat skills.txt`) {
+    } else if (cdInput === `cd skills.txt`) {
       return <Skills />;
-    } else if (cdInput === `cat projects.txt`) {
+    } else if (cdInput === `cd projects.txt`) {
       return <Projects />;
-    } else if (cdInput === `cat contact.txt`) {
+    } else if (cdInput === `cd contact.txt`) {
       return <Contact />;
     }
   };
@@ -271,7 +271,7 @@ export default function Terminal({toggle}) {
                     
                     <br />
                     
-                      'cat' : to access each page
+                      'cd' : to access each page
                     
                   </p>  
                   <br />
