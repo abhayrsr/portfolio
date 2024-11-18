@@ -47,7 +47,7 @@ export default function Terminal({toggle}) {
     } else {
       // setCdInputToggle(true);
         for (let p = 0; p < pages.length; p++) {
-          if (cdInput === `cd ${pages[p]}.txt`) {
+          if (cdInput === `cat ${pages[p]}.txt`) {
             if (e.key === "Enter") {
               showThirdCmdLine(true)
             }
@@ -82,13 +82,13 @@ export default function Terminal({toggle}) {
   }
 
   const component = () => {
-    if (cdInput === `cd experience.txt`) {
+    if (cdInput === `cat experience.txt`) {
       return <Experience />;
-    } else if (cdInput === `cd skills.txt`) {
+    } else if (cdInput === `cat skills.txt`) {
       return <Skills />;
-    } else if (cdInput === `cd projects.txt`) {
+    } else if (cdInput === `cat projects.txt`) {
       return <Projects />;
-    } else if (cdInput === `cd contact.txt`) {
+    } else if (cdInput === `cat contact.txt`) {
       return <Contact />;
     }
   };
