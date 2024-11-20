@@ -7,7 +7,7 @@ export default function Skills() {
       <br />
       <div>
         <p class="absolute left 0 "><span class="text-[#6891C4]">Language</span> JavaScript, C</p><br/>
-        <p class="absolute left 0"><span class="text-[#6891C4]">Frameworks</span> React, Node.js Express.js, Redux, Bootstrap, Tailwind CSS</p><br/>
+        <p class="absolute left 0"><span class="text-[#6891C4]">Frameworks & Libraries</span> React, Node.js Express.js, Redux, Bootstrap, Tailwind CSS</p><br/>
         <p class="absolute left 0"><span class="text-[#6891C4]">Databases</span> MySQL, MongoDB, PostgreSQL</p><br />
         <p class="absolute left 0"><span class="text-[#6891C4]">Tools</span> Git, PowerShell, Linux, Vim</p><br />
         <p class="absolute left 0"><span class="text-[#6891C4]">Cloud</span> Azure</p><br />
