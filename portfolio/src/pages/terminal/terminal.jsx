@@ -267,11 +267,11 @@ export default function Terminal({toggle}) {
                     The following commands will help:
                     <br />
                     
-                      'ls' : to list all pages
+                      'ls' : to list all text files
                     
                     <br />
                     
-                      'cd' : to access each page
+                      'cat' : to access each text file
                     
                   </p>  
                   <br />

@@ -24,19 +24,19 @@ export default function Path() {
       if (e.key === "Enter") {
         setToggleList(true);
       }
-    } else if (inputCommand === `cd experience.txt`) {
+    } else if (inputCommand === `cat experience.txt`) {
         if(e.key === "Enter"){
           setToggleExp(true)
       } 
-    } else if (inputCommand === `cd projects.txt`){
+    } else if (inputCommand === `cat projects.txt`){
       if(e.key === 'Enter'){
         setToggleProject(true)
       }
-    } else if(inputCommand === `cd contact.txt`){
+    } else if(inputCommand === `cat contact.txt`){
       if(e.key === 'Enter'){
         setToggleContact(true)
       }
-    } else if(inputCommand === `cd skills.txt`){
+    } else if(inputCommand === `cat skills.txt`){
       if(e.key === 'Enter'){
         setToggleSkills(true)
       }
